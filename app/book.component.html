@@ -10,7 +10,7 @@
 		<button class="delete-button" (click)="delete(book, $event)">Delete</button>
 	</li>
 </ul>
-<button (click)="addBook()">Dodaj nowy adres</button>
+<button class="btn btn-info" (click)="addBook()">Dodaj nowy adres</button>
 <div *ngIf="addingBook">
   <my-book-detail (close)="close($event)"></my-book-detail>
 </div>
@@ -18,5 +18,5 @@
 	<h2>
 		{{selectedBook.name}} {{selectedBook.surname}} jest fajny
 	</h2>
-	<button (click)="gotoDetail()">Szczegóły</button>
+	<button class="btn btn-info"(click)="gotoDetail()">Szczegóły</button>
 </div>

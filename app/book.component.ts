@@ -50,7 +50,7 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookService.getBook().then(address => this.address = address.slice(6,123232131333));
+    this.bookService.getBook().then(address => this.address = address.slice(3,123232131333));
   }
 
   onSelect(book: AddressBook) {
