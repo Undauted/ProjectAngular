@@ -1,8 +1,8 @@
 import { Component }       from '@angular/core';
-import { BookService } from './addressBook.service';
-import { BookComponent } from './book.component';
-import { MainComponent } from './dashboard.component';
-import { AddressBookDetailComponent } from './book-detail.component';
+import { BookService } from '../service/addressBook.service';
+import { BookComponent } from '../book.component/book.component';
+import { MainComponent } from '../dashboard/dashboard.component';
+import { AddressBookDetailComponent } from '../book-detail/book-detail.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 @Component({
 	selector: 	'projekt-angular',

@@ -1,12 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
 
-import { AddressBook } from './book';
-import { BookService } from './addressBook.service';
+import { AddressBook } from '../book/book';
+import { BookService } from '../service/addressBook.service';
 @Component({
   selector: 'my-book-detail',
-  templateUrl: 'app/book-detail.component.html',
-  styleUrls: ['app/book-detail.component.css']
+  templateUrl: 'app/book-detail/book-detail.component.html',
+  styleUrls: ['app/book-detail/book-detail.component.css']
 })
 export class AddressBookDetailComponent implements OnInit {
   @Input() book: AddressBook;

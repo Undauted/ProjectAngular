@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AddressBook } from './book';
-import { BookService } from './addressBook.service';
+import { AddressBook } from '../book/book';
+import { BookService } from '../service/addressBook.service';
 import { Router } from '@angular/router-deprecated';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: 'app/dashboard.component.html',
-  styleUrls: ['app/dashboard.component.css']
+  templateUrl: 'app/dashboard/dashboard.component.html',
+  styleUrls: ['app/dashboard/dashboard.component.css']
 })
 export class MainComponent { 
 

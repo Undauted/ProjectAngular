@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router-deprecated';
 
-import { AddressBook } from './book';
-import { BookService } from './addressBook.service';
-import { AddressBookDetailComponent } from './book-detail.component';
+import { AddressBook } from '../book/book';
+import { BookService } from '../service/addressBook.service';
+import { AddressBookDetailComponent } from '../book-detail/book-detail.component';
 
 @Component({
   selector: 'my-book',
-  templateUrl: 'app/book.component.html',
-  styleUrls:  ['app/book.component.css'],
+  templateUrl: 'app/book.component/book.component.html',
+  styleUrls:  ['app/book.component/book.component.css'],
   directives: [AddressBookDetailComponent]
 })
 export class BookComponent implements OnInit {
@@ -35,7 +35,7 @@ export class BookComponent implements OnInit {
 
   close(savedBook: AddressBook) {
     this.addingBook = false;
-    if (savedBook) {  this.bookService.getBook().then(address => this.address = address.slice(6,123232131333));}
+    if (savedBook) {  this.bookService.getBook().then(address => this.address = address.slice(28,123232131333));}
   }
 
   delete(book: AddressBook, event: any) {
@@ -50,7 +50,7 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookService.getBook().then(address => this.address = address.slice(3,123232131333));
+    this.bookService.getBook().then(address => this.address = address.slice(28,123232131333));
   }
 
   onSelect(book: AddressBook) {
