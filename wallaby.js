@@ -1,20 +1,17 @@
-// Configuration for the Wallaby Visual Studio Code testing extension
-// https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode
-// Note: Wallaby is not open source and costs money
+
 
 module.exports = function () {
 
   return {
     files: [
-      // System.js for module loading
+      
       {pattern: 'node_modules/systemjs/dist/system.js', instrument: false},
       {pattern: 'systemjs.config.js', instrument: false},
 
-      // Polyfills
+
       {pattern: 'node_modules/core-js/client/shim.min.js', instrument: false},
 
-      // Reflect, Zone.js, and test shims
-      // Rx.js, Angular 2 itself, and the testing library not here because loaded by systemjs
+
       {pattern: 'node_modules/reflect-metadata/Reflect.js', instrument: false},
       {pattern: 'node_modules/zone.js/dist/zone.js', instrument: false},
       {pattern: 'node_modules/zone.js/dist/jasmine-patch.js', instrument: false},
@@ -41,7 +38,7 @@ module.exports = function () {
       wallaby.delayStart();
 
       System.config({
-        packageWithIndex: true // sadly, we can't use umd packages (yet?)
+        packageWithIndex: true 
       });
 
       System.import('systemjs.config.js')
@@ -59,7 +56,7 @@ module.exports = function () {
             testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
             testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS);
 
-          // Load all spec files
+     
           return Promise.all(wallaby.tests.map(function (specFile) {
             return System.import(specFile);
           }));
