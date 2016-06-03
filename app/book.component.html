@@ -1,0 +1,22 @@
+﻿
+<h2>Książka adresowa</h2>
+<ul class="address">
+	<li *ngFor="let book of address" 
+		(click)="onSelect(book)"
+		[class.selected]="book === selectedBook">
+		<span class="book-element">
+			<span class="badge">{{book.id}}</span> {{book.name}} {{book.surname}}
+		</span>
+		<button class="delete-button" (click)="delete(book, $event)">Delete</button>
+	</li>
+</ul>
+<button (click)="addBook()">Add New Address</button>
+<div *ngIf="addingBook">
+  <my-book-detail (close)="close($event)"></my-book-detail>
+</div>
+<div *ngIf="selectedBook">
+	<h2>
+		{{selectedBook.name}} {{selectedBook.surname}} jest fajny
+	</h2>
+	<button (click)="gotoDetail()">Szczegóły</button>
+</div>
