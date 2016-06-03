@@ -10,7 +10,7 @@
 		<button class="delete-button" (click)="delete(book, $event)">Delete</button>
 	</li>
 </ul>
-<button (click)="addBook()">Add New Address</button>
+<button (click)="addBook()">Dodaj nowy adres</button>
 <div *ngIf="addingBook">
   <my-book-detail (close)="close($event)"></my-book-detail>
 </div>

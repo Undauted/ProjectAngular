@@ -5,6 +5,7 @@ export class AddressBook {
   street: string;
   number: string;
   city: string;
-  phone: number;
+  phone: string;
+  email:string;
   
 }

@@ -1,31 +1,60 @@
 <div *ngIf="book">
-	<h2>{{book.name}} {{book.surname}}</h2>
+
+	<h2 name="hadwa">{{book.name}} {{book.surname}}</h2>
 	<h2>{{book.street}} {{book.number}} {{book.city}}</h2>
-	<h2>Telefon: {{book.phone}}</h2>
-	<div>
-		<label>Imie: </label>
-		<input [(ngModel)]="book.name" placeholder="name">
-	</div>
-	<div>
-		<label>Nazwisko: </label>
-		<input [(ngModel)]="book.surname" placeholder="surname">
-	</div>
-	<div>
-		<label>Ulica: </label>
-		<input [(ngModel)]="book.street" placeholder="street">
-	</div>
-	<div>
-		<label>Numer: </label>
-		<input [(ngModel)]="book.number" placeholder="number">
-	</div>
-	<div>
-		<label>Miasto: </label>
-		<input [(ngModel)]="book.city" placeholder="city">
-	</div>
-	<div>
-		<label>Telefon: </label>
-		<input [(ngModel)]="book.phone" placeholder="phone">
-	</div>
-	<button (click)="goBack()">Back</button>
-	<button (click)="save()">Save</button>
+	<h2>{{book.phone}}</h2>
+	<h2>{{book.email}}</h2>
+	<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+		<div>
+			<label for="name">Imię</label>
+			<input type="text" placeholder="imię" class="form-control" required [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
+			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+				Imię jest wymagane
+			</div>
+			
+		</div>
+		<div>
+			<label>Nazwisko: </label>
+			<input type="text" placeholder="nazwisko" class="form-control" required [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
+			<div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
+				Nazwisko jest wymagane
+			</div>
+		</div>
+		<div>
+			<label>Ulica: </label>
+			<input type="text" placeholder="ulica" class="form-control" required [(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
+			<div [hidden]="street.valid || street.pristine" class="alert alert-danger">
+				Ulica jest wymagana
+			</div>
+		</div>
+		<div>
+			<label>Numer: </label>
+			<input type="text" placeholder="numer" class="form-control" required pattern="[1-9][0-9]?[0-9]?[A-Za-z]?\/?[1-9]?[1-9]?" [(ngModel)]="book.number" ngControl="numer"  #numer="ngForm" >
+			<div [hidden]="numer.valid || numer.pristine" class="alert alert-danger">
+				Niepoprawny numer
+			</div>
+		</div>
+		<div>
+			<label>Miasto: </label>
+			<input type="text" placeholder="miasto" class="form-control" required [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
+			<div [hidden]="city.valid || city.pristine" class="alert alert-danger">
+				Miasto jest wymagane
+			</div>
+		</div>
+		<div>
+			<label>Telefon: </label>
+			<input type="text" placeholder="telefon" class="form-control" required pattern="^[1-9]{1}[0-9]{2}-[0-9]{3}-[0-9]{3}" [(ngModel)]="book.phone" ngControl="telefon"  #telefon="ngForm" >
+			<div [hidden]="telefon.valid || telefon.pristine" class="alert alert-danger">
+				Niepoprawny format numeru telefonu
+			</div>
+		</div>
+		<label>Email: </label>
+			<input type="text" placeholder="email" class="form-control" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" [(ngModel)]="book.email" ngControl="email"  #email="ngForm" >
+			<div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+				Niepoprawny email
+			</div>
+		<button type="submit" class="btn btn-warning" (click)="goBack()" name="back">Cofnij</button>
+		<button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid" (click)="save()">Zapisz</button>
+		
+	</form>
 </div>

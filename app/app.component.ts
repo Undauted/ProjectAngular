@@ -8,8 +8,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 	selector: 	'projekt-angular',
 	template:  	`<h1>{{title}}</h1>
 				<nav>
-					<a [routerLink]="['Main']">Książka adresowa</a>
-					<a [routerLink]="['AddressBooks']">Moje kontakty</a>
+					<a [routerLink]="['Main']" class="btn btn-primary" name="ksiazka">Książka adresowa</a>
+					<a [routerLink]="['AddressBooks']" class="btn btn-primary">Moje kontakty</a>
 				</nav>
 				<router-outlet></router-outlet>`,
 	

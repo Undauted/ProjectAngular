@@ -4,26 +4,42 @@
       margin: .5em 0;
       color: #607D8B;
       font-weight: bold;
+	  margin-left:2em;
     }
+	input[name="imie"]{
+		margin-top:2em;
+	}
     input {
       height: 2em;
+	  width:17em;
       font-size: 1em;
       padding-left: .4em;
+	  display: inline-block;
     }
     button {
       margin-top: 20px;
       font-family: Arial;
-      background-color: #eee;
+     
       border: none;
       padding: 5px 10px;
       border-radius: 4px;
       cursor: pointer; cursor: hand;
+	 
     }
-    button:hover {
-      background-color: #cfd8dc;
-    }
-    button:disabled {
-      background-color: #eee;
-      color: #ccc; 
-      cursor: auto;
-    }
+    button[name="back"] {
+		margin-left:2em;
+	}
+	
+	h2{
+		margin-left:22px;
+	}
+	h2[name="hadwa"]{
+		margin-top:1em;
+	}
+	.ng-valid[required] {
+	  border-left: 5px solid #42A948; /* green */
+	}
+
+	.ng-invalid {
+	  border-left: 5px solid #a94442; /* red */
+	}
