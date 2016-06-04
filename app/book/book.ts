@@ -7,5 +7,6 @@ export class AddressBook {
   city: string;
   phone: string;
   email:string;
+  note:string;
   
 }

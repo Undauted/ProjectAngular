@@ -7,7 +7,7 @@
 	<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
 		<div>
 			<label for="name">Imię</label>
-			<input type="text" placeholder="imię" class="form-control" required [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
+			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-z]+" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
 			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
 				Imię jest wymagane
 			</div>
@@ -15,14 +15,14 @@
 		</div>
 		<div>
 			<label>Nazwisko: </label>
-			<input type="text" placeholder="nazwisko" class="form-control" required [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
+			<input type="text" placeholder="nazwisko" class="form-control" required pattern="[A-Z]{1}[a-z]+" [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
 			<div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
 				Nazwisko jest wymagane
 			</div>
 		</div>
 		<div>
 			<label>Ulica: </label>
-			<input type="text" placeholder="ulica" class="form-control" required [(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
+			<input type="text" placeholder="ulica" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*"[(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
 			<div [hidden]="street.valid || street.pristine" class="alert alert-danger">
 				Ulica jest wymagana
 			</div>
@@ -36,7 +36,7 @@
 		</div>
 		<div>
 			<label>Miasto: </label>
-			<input type="text" placeholder="miasto" class="form-control" required [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
+			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźó]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
 			<div [hidden]="city.valid || city.pristine" class="alert alert-danger">
 				Miasto jest wymagane
 			</div>
@@ -48,11 +48,20 @@
 				Niepoprawny format numeru telefonu
 			</div>
 		</div>
-		<label>Email: </label>
+		<div>
+			<label>Email: </label>
 			<input type="text" placeholder="email" class="form-control" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" [(ngModel)]="book.email" ngControl="email"  #email="ngForm" >
 			<div [hidden]="email.valid || email.pristine" class="alert alert-danger">
 				Niepoprawny email
 			</div>
+		</div>
+		<div>
+			<label>Uwagi do strony: </label>
+			<textarea placeholder="uwagi" class="form-control" required  [(ngModel)]="book.note" ngControl="note"  #note="ngForm" ></textarea>
+			<div [hidden]="note.valid || note.pristine" class="alert alert-danger">
+				Proszę o wypełnienie pola uwagi
+			</div>
+		</div>
 		<button type="submit" class="btn btn-warning" (click)="goBack()" name="back">Cofnij</button>
 		<button type="submit" class="btn btn-success" [disabled]="!bookForm.form.valid" (click)="save()">Zapisz</button>
 		

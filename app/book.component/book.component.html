@@ -15,8 +15,21 @@
   <my-book-detail (close)="close($event)"></my-book-detail>
 </div>
 <div *ngIf="selectedBook">
-	<h2>
-		{{selectedBook.name}} {{selectedBook.surname}} jest fajny
-	</h2>
-	<button class="btn btn-info"(click)="gotoDetail()">Szczegóły</button>
+<ul>
+
+	<li><h2>
+		{{selectedBook.name}} {{selectedBook.surname}} 
+	</h2></li>
+	<li><h2>
+		{{selectedBook.street}} {{selectedBook.number}} {{selectedBook.city}} 
+	</h2></li>
+	<li><h2>
+		{{selectedBook.phone}}
+	</h2></li>
+	<li><h2>
+		{{selectedBook.email}}
+	</h2></li>
+</ul>	
+	<button class="btn btn-info"(click)="gotoDetail()">Edytuj</button>
+
 </div>

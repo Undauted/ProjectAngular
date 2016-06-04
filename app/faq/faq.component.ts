@@ -34,7 +34,11 @@ addStart() {
 	this.contact=false;
 } 
 
-  
+	address: AddressBook[] = [];
+	constructor(private router: Router,
+	private bookService: BookService) { }
+	ngOnInit() {
+		this.bookService.getBook().then(address => this.address = address);
+	}
 
- 
-}
+} 

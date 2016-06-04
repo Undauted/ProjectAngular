@@ -10,6 +10,7 @@
     }
     h3 {
       text-align: center; margin-bottom: 0;
+	  font-family:Courier New;
 	  
     }
     [class*='col-'] {
@@ -36,6 +37,7 @@
     }
     h4 {
       position: relative;
+	  font-family:Courier New;
     }
  
     .grid-pad {

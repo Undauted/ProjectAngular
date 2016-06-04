@@ -16,6 +16,9 @@
       padding-left: .4em;
 	  display: inline-block;
     }
+	textarea{
+		width:17em;
+	}
     button {
       margin-top: 20px;
       font-family: Arial;

@@ -1,15 +1,52 @@
 button[name="contact"]{
-	margin-left:10em;
+	margin-left:18em;
+}
+button{
+	margin-left:1em;
 }
 h2{
-	margin-left:6em;
+	margin-left:10.5em;
 	font-size:24px;
+	font-family:Courier New;
 }
 h3{
-	margin-left:8em;
+	margin-left:14em;
 	font-size:18px;
+	font-family:Courier New;
+}
+h4{
+	font-size:24px;
+	margin-left:1em;
+	margin-top:2em;
+}
+label{
+	font-size:18px;
+	font-family:Courier New;
+}
+div.kontener{
+	display:list-item;
 }
 
-div.kontener{
-	display:flex;
+ul {
+
+list-style-type: none;
+
+}
+button[name="contact"]{
+	margin-top:10px;
+}
+button{
+	height:80px;
+	width:280px;
+}
+
+h1[name="uwagi"]{
+	font-size:20px;
+}
+textarea{
+	margin-left:1em;
+}
+
+label[name="note"]{
+	margin-left:3em;
 }
