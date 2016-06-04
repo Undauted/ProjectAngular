@@ -1,0 +1,15 @@
+button[name="contact"]{
+	margin-left:10em;
+}
+h2{
+	margin-left:6em;
+	font-size:24px;
+}
+h3{
+	margin-left:8em;
+	font-size:18px;
+}
+
+div.kontener{
+	display:flex;
+}

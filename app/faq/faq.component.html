@@ -1,0 +1,18 @@
+﻿
+<h1>FAQ</h1>
+<button class="btn btn-info" (click)="addFaq()">Lista problemów</button>
+<div *ngIf="addingFaq" class="kontener">
+	<button class="btn btn-info" (click)="addStart()" name="contact">Reset</button>
+	<div *ngIf="start">
+	<h2>W razie problemów ze stroną:</h2>
+	<h3>W konsoli wcisnąć ctrl+C</h3>
+	<h3>Wpisać ponownie: npm start</h3>
+	</div>
+	<button class="btn btn-info" (click)="addContact()" name="contact">Kontakt</button>
+	<div *ngIf="contact">
+	<h2>Piotr Kacprowicz</h2>
+	<h2>Telefon: 111-111-111</h2>
+	<h2>Email: pk@wp.pl</h2>
+	</div>
+</div>
+
