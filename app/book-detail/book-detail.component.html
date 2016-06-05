@@ -7,7 +7,7 @@
 	<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
 		<div>
 			<label for="name">Imię</label>
-			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-z]+" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
+			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
 			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
 				Imię jest wymagane
 			</div>
