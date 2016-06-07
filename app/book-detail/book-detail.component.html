@@ -7,7 +7,7 @@
 	<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
 		<div>
 			<label for="name">Imię: </label>
-			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
+			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźółś]+ ?[A-Z]?[a-ząćńężźółś]*" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
 			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
 				Imię jest wymagane i musi byc z dużej litery.
 			</div>
@@ -15,14 +15,14 @@
 		</div>
 		<div>
 			<label>Nazwisko: </label>
-			<input type="text" placeholder="nazwisko" class="form-control" required pattern="[A-Z]{1}[a-z]+" [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
+			<input type="text" placeholder="nazwisko" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźółś]+" [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
 			<div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
 				Nazwisko jest wymagane i musi byc z dużej litery.
 			</div>
 		</div>
 		<div>
 			<label>Ulica: </label>
-			<input type="text" placeholder="ulica" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*"[(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
+			<input type="text" placeholder="ulica" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźółś]+ ?[A-Z]?[a-ząćńężźółś]*"[(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
 			<div [hidden]="street.valid || street.pristine" class="alert alert-danger">
 				Ulica jest wymagana i musi byc z dużej litery.
 			</div>
@@ -36,7 +36,7 @@
 		</div>
 		<div>
 			<label>Miasto: </label>
-			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźół]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
+			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźółś]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
 			<div [hidden]="city.valid || city.pristine" class="alert alert-danger">
 				Miasto jest wymagane i musi byc z dużej litery.
 			</div>
