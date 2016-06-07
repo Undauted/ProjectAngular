@@ -9,7 +9,7 @@
 			<label for="name">Imię</label>
 			<input type="text" placeholder="imię" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*" [(ngModel)]="book.name" ngControl="name" name="imie"  #name="ngForm" >
 			<div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-				Imię jest wymagane
+				Imię jest wymagane i musi byc z dużej litery.
 			</div>
 			
 		</div>
@@ -17,49 +17,49 @@
 			<label>Nazwisko: </label>
 			<input type="text" placeholder="nazwisko" class="form-control" required pattern="[A-Z]{1}[a-z]+" [(ngModel)]="book.surname" ngControl="surname"  #surname="ngForm" >
 			<div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
-				Nazwisko jest wymagane
+				Nazwisko jest wymagane i musi byc z dużej litery.
 			</div>
 		</div>
 		<div>
 			<label>Ulica: </label>
 			<input type="text" placeholder="ulica" class="form-control" required pattern="[A-Z]{1}[a-z]+ ?[A-Z]?[a-z]*"[(ngModel)]="book.street" ngControl="street"  #street="ngForm" >
 			<div [hidden]="street.valid || street.pristine" class="alert alert-danger">
-				Ulica jest wymagana
+				Ulica jest wymagana i musi byc z dużej litery.
 			</div>
 		</div>
 		<div>
 			<label>Numer: </label>
 			<input type="text" placeholder="numer" class="form-control" required pattern="[1-9][0-9]?[0-9]?[A-Za-z]?\/?[1-9]?[1-9]?" [(ngModel)]="book.number" ngControl="numer"  #numer="ngForm" >
 			<div [hidden]="numer.valid || numer.pristine" class="alert alert-danger">
-				Niepoprawny numer
+				Niepoprawny numer. Przykład: 12 lub 12A lub 12A/8.
 			</div>
 		</div>
 		<div>
 			<label>Miasto: </label>
 			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźó]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
 			<div [hidden]="city.valid || city.pristine" class="alert alert-danger">
-				Miasto jest wymagane
+				Miasto jest wymagane i musi byc z dużej litery.
 			</div>
 		</div>
 		<div>
 			<label>Telefon: </label>
 			<input type="text" placeholder="telefon" class="form-control" required pattern="^[1-9]{1}[0-9]{2}-[0-9]{3}-[0-9]{3}" [(ngModel)]="book.phone" ngControl="telefon"  #telefon="ngForm" >
 			<div [hidden]="telefon.valid || telefon.pristine" class="alert alert-danger">
-				Niepoprawny format numeru telefonu
+				Niepoprawny format numeru telefonu. Przykład: XXX-XXX-XXX.
 			</div>
 		</div>
 		<div>
 			<label>Email: </label>
 			<input type="text" placeholder="email" class="form-control" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" [(ngModel)]="book.email" ngControl="email"  #email="ngForm" >
 			<div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-				Niepoprawny email
+				Niepoprawny format email.
 			</div>
 		</div>
 		<div>
 			<label>Uwagi do strony: </label>
 			<textarea placeholder="uwagi" class="form-control" required  [(ngModel)]="book.note" ngControl="note"  #note="ngForm" ></textarea>
 			<div [hidden]="note.valid || note.pristine" class="alert alert-danger">
-				Proszę o wypełnienie pola uwagi
+				Proszę o wypełnienie pola uwagi.
 			</div>
 		</div>
 		<button type="submit" class="btn btn-warning" (click)="goBack()" name="back">Cofnij</button>
