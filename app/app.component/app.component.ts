@@ -18,7 +18,7 @@ import {  WikiComponent } from '../search/search.component';
 					<li><a [routerLink]="['Main']"  name="ksiazka">Książka adresowa</a></li>
 					<li><a [routerLink]="['AddressBooks']" >Moje kontakty</a></li>
 					<li><a [routerLink]="['FAQ']" >FAQ</a></li>
-					<li><a [routerLink]="['WikiComponent']" >Wiki</a></li>
+					<li><a [routerLink]="['WikiComponent']" >Szukanie</a></li>
 				  </ul>
 				</div>
 			  </div>
