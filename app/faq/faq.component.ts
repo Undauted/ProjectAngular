@@ -38,7 +38,7 @@ addStart() {
 	constructor(private router: Router,
 	private bookService: BookService) { }
 	ngOnInit() {
-		this.bookService.getBook().then(address => this.address = address);
+		this.bookService.getBook().subscribe(address => this.address = address);
 	}
 
 } 

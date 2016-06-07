@@ -24,7 +24,7 @@ export class AddressBookDetailComponent implements OnInit {
       let id = +this.routeParams.get('id');
       this.navigated = true;
       this.bookService.getId(id)
-          .then(book => this.book = book);
+          .subscribe(book => this.book = book);
     } else {
       this.navigated = false;
       this.book = new AddressBook();
@@ -33,11 +33,10 @@ export class AddressBookDetailComponent implements OnInit {
   save() {
     this.bookService
         .save(this.book)
-        .then(book => {
+        .subscribe(book => {
           this.book = book; // saved book, w/ id if new
           this.goBack(book);
-        })
-        .catch(error => this.error = error); // TODO: Display error message
+        },error => this.error = error);
   }
   goBack(savedBook: AddressBook = null) {
     this.close.emit(savedBook);

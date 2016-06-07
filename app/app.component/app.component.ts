@@ -6,6 +6,8 @@ import { HomeComponent } from '../home/home.component';
 import { FaqComponent } from '../faq/faq.component';
 import { AddressBookDetailComponent } from '../book-detail/book-detail.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import './rxjs-operators';
+
 @Component({
 	selector: 	'projekt-angular',
 	template:  	`<h1>{{title}}</h1>

@@ -16,7 +16,7 @@ export class BookComponent implements OnInit {
   selectedBook: AddressBook;
   addingBook = false;
   error: any;
-
+  mode = 'Observable';		
   constructor(
     private router: Router,
     private bookService: BookService) { }
@@ -24,8 +24,7 @@ export class BookComponent implements OnInit {
   getBook() {
     this.bookService
         .getBook()
-        .then(address => this.address = address)
-        .catch(error => this.error = error); // TODO: Display error message
+        .subscribe(address => this.address = address, error => this.error = error);
   }
 
   addBook() {
@@ -35,22 +34,21 @@ export class BookComponent implements OnInit {
 
   close(savedBook: AddressBook) {
     this.addingBook = false;
-    if (savedBook) {  this.bookService.getBook().then(address => this.address = address.slice(28,123232131333));}
+    if (savedBook) {  this.bookService.getBook().subscribe(address => this.address = address.slice(28,123232131333));}
   }
 
   delete(book: AddressBook, event: any) {
     event.stopPropagation();
     this.bookService
         .delete(book)
-        .then(res => {
+        .subscribe(res => {
           this.address = this.address.filter(h => h !== book);
           if (this.selectedBook === book) { this.selectedBook = null; }
-        })
-        .catch(error => this.error = error); // TODO: Display error message
+        },error => this.error = error);
   }
 
   ngOnInit() {
-    this.bookService.getBook().then(address => this.address = address.slice(28,123232131333));
+    this.bookService.getBook().subscribe(address => this.address = address.slice(28,123232131333));
   }
 
   onSelect(book: AddressBook) {

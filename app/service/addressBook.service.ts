@@ -1,9 +1,8 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
-import 'rxjs/add/operator/toPromise';
-
 import { AddressBook } from '../book/book';
+import { Observable }     from 'rxjs/Observable';
 
 @Injectable()
 export class BookService {
@@ -12,19 +11,18 @@ export class BookService {
 
   constructor(private http: Http) { }
 
-  getBook(): Promise<AddressBook[]> {
+  getBook(): Observable<AddressBook[]> {
     return this.http.get(this.addressUrl)
-               .toPromise()
-               .then(response => response.json().data)
+               .map(response => response.json().data)
                .catch(this.handleError);
   }
 
   getId(id: number) {
     return this.getBook()
-               .then(address => address.filter(book => book.id === id)[0]);
+               .map(address => address.filter(book => book.id === id)[0]);
   }
 
-  save(book: AddressBook): Promise<AddressBook>  {
+  save(book: AddressBook): Observable<AddressBook>  {
     if (book.id) {
       return this.put(book);
     }
@@ -39,19 +37,17 @@ export class BookService {
 
     return this.http
                .delete(url, headers)
-               .toPromise()
                .catch(this.handleError);
   }
 
   // Add new AddressBook
-  private post(book: AddressBook): Promise<AddressBook> {
+  private post(book: AddressBook): Observable<AddressBook> {
     let headers = new Headers({
       'Content-Type': 'application/json'});
 
     return this.http
                .post(this.addressUrl, JSON.stringify(book), {headers: headers})
-               .toPromise()
-               .then(res => res.json().data)
+               .map(res => res.json().data)
                .catch(this.handleError);
   }
 
@@ -64,13 +60,12 @@ export class BookService {
 
     return this.http
                .put(url, JSON.stringify(book), {headers: headers})
-               .toPromise()
-               .then(() => book)
+               .map(() => book)
                .catch(this.handleError);
   }
 
   private handleError(error: any) {
     console.error('An error occurred', error);
-    return Promise.reject(error.message || error);
+    return  Observable.throw(error.message || error);
   }
 }
