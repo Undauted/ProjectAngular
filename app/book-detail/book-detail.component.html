@@ -36,7 +36,7 @@
 		</div>
 		<div>
 			<label>Miasto: </label>
-			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźó]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
+			<input type="text" placeholder="miasto" class="form-control" required pattern="[A-Z]{1}[a-ząćńężźół]+" [(ngModel)]="book.city" ngControl="city"  #city="ngForm" >
 			<div [hidden]="city.valid || city.pristine" class="alert alert-danger">
 				Miasto jest wymagane i musi byc z dużej litery.
 			</div>
