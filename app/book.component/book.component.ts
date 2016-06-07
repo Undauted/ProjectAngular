@@ -5,6 +5,7 @@ import { AddressBook } from '../book/book';
 import { BookService } from '../service/addressBook.service';
 import { AddressBookDetailComponent } from '../book-detail/book-detail.component';
 
+
 @Component({
   selector: 'my-book',
   templateUrl: 'app/book.component/book.component.html',

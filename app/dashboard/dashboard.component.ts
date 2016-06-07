@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { AddressBook } from '../book/book';
 import { BookService } from '../service/addressBook.service';
 import { Router } from '@angular/router-deprecated';
-
+import {DateComponent } from '../date/date';
 @Component({
   selector: 'my-dashboard',
   templateUrl: 'app/dashboard/dashboard.component.html',
-  styleUrls: ['app/dashboard/dashboard.component.css']
+  styleUrls: ['app/dashboard/dashboard.component.css'],
+  directives: [DateComponent]
 })
 export class MainComponent { 
 

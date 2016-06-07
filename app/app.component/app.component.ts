@@ -7,7 +7,7 @@ import { FaqComponent } from '../faq/faq.component';
 import { AddressBookDetailComponent } from '../book-detail/book-detail.component';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import './rxjs-operators';
-
+import {  WikiComponent } from '../search/search.component';
 @Component({
 	selector: 	'projekt-angular',
 	template:  	`<h1>{{title}}</h1>
@@ -18,6 +18,7 @@ import './rxjs-operators';
 					<li><a [routerLink]="['Main']"  name="ksiazka">Książka adresowa</a></li>
 					<li><a [routerLink]="['AddressBooks']" >Moje kontakty</a></li>
 					<li><a [routerLink]="['FAQ']" >FAQ</a></li>
+					<li><a [routerLink]="['WikiComponent']" >Wiki</a></li>
 				  </ul>
 				</div>
 			  </div>
@@ -33,6 +34,11 @@ import './rxjs-operators';
     path: '/books',
     name: 'AddressBooks',
     component: BookComponent
+},
+{
+    path: '/wiki',
+    name: 'WikiComponent',
+    component: WikiComponent
 },
 {
     path: '/',

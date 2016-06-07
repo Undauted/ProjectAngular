@@ -62,3 +62,7 @@
           min-width: 60px;
         }
     }
+	div[name="date"]{
+		display: inline-block;
+		font-size:25px;
+	}
